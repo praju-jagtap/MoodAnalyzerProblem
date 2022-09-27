@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome To Mood Analyzer Problem Statement");
+            MoodAnalyser mood = new MoodAnalyser();
+            mood.Analyser("I am in Sad Mood");
         }
     }
 }
