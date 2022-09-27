@@ -12,6 +12,14 @@ namespace MSTestMoodAnalyzer
             MoodAnalyser moodAnalyser = new MoodAnalyser();
             string actual = moodAnalyser.Analyser(message);
             Assert.AreEqual(actual, "SAD");
-        }    
+        }
+        [TestMethod]
+        public void GivenIAmInAnyMood_ShouldReturnHappy()
+        {
+            string message = "I am in Any Mood";
+            MoodAnalyser moodAnalyser = new MoodAnalyser();
+            string actual = moodAnalyser.Analyser(message);
+            Assert.AreEqual(actual, "HAPPY");
+        }
     }
 }
