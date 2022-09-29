@@ -29,5 +29,19 @@ namespace MSTestMoodAnalyzer
             string actual = moodAnalyser.Analyser();
             Assert.AreEqual(actual, "HAPPY");
         }
+        [TestMethod]
+        public void GivenNullMessage_WhenAnalyde_ShouldReturnHappy()
+        {
+            string message = "null";
+            MoodAnalyser mood = new MoodAnalyser(message);
+            try
+            {
+                string actual = mood.Analyser();
+            }
+            catch (MoodAnalysisException ex)
+            {
+                Assert.AreEqual(ex.Message, "Message is Null");
+            }
+        }
     }
 }
