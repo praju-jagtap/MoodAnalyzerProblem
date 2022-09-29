@@ -43,5 +43,19 @@ namespace MSTestMoodAnalyzer
                 Assert.AreEqual(ex.Message, "Message is Null");
             }
         }
+        [TestMethod]
+        public void GivenEmptylMessage_WhenAnalyde_ShouldReturnHappy()
+        {
+            string message = string.Empty;
+            MoodAnalyser mood = new MoodAnalyser(message);
+            try
+            {
+                string actual = mood.Analyser();
+            }
+            catch (MoodAnalysisException ex)
+            {
+                Assert.AreEqual(ex.Message, "Message is Empty");
+            }
+        }
     }
 }
