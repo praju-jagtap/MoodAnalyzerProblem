@@ -6,19 +6,19 @@ namespace MSTestMoodAnalyzer
     public class MoodAnalyserTest
     {
         [TestMethod]
-        public void GivenIAmInSadMood_ShouldReturnSad()
+        public void GivenIAmInSadMessageInConstructor_ShouldReturnSad()
         {
             string message = "I am in Sad Mood";
-            MoodAnalyser moodAnalyser = new MoodAnalyser();
-            string actual = moodAnalyser.Analyser(message);
+            MoodAnalyser moodAnalyser = new MoodAnalyser(message);
+            string actual = moodAnalyser.Analyser();
             Assert.AreEqual(actual, "SAD");
         }
         [TestMethod]
-        public void GivenIAmInAnyMood_ShouldReturnHappy()
+        public void GivenIAmInHappyMessageInConstructor_ShouldReturnHappy()
         {
-            string message = "I am in Any Mood";
-            MoodAnalyser moodAnalyser = new MoodAnalyser();
-            string actual = moodAnalyser.Analyser(message);
+            string message = "I am in Happy Mood";
+            MoodAnalyser moodAnalyser = new MoodAnalyser(message);
+            string actual = moodAnalyser.Analyser();
             Assert.AreEqual(actual, "HAPPY");
         }
     }
