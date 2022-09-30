@@ -10,7 +10,7 @@ namespace MoodAnalyzerProblemStatement
 {
     public class MoodAnalyserFactory
     {
-        public static object CreateMoodAnalyse(string className, string constructorName)
+        public static object CreateMoodAnalyse(string className,string constructorName)
         {
             string pattern = @"." + constructorName + "$";
             Match result = Regex.Match(className, pattern);
@@ -32,6 +32,5 @@ namespace MoodAnalyzerProblemStatement
                 throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.NO_SUCH_METHOD, "Constructor is Not Found");
             }
         }
-
     }
 }
